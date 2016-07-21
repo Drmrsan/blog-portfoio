@@ -17,7 +17,7 @@ gem 'haml-rails', '~> 0.9.0'
 gem 'sprockets-rails', '~> 3.1', '>= 3.1.1'
 gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 gem 'materialize-sass', '~> 0.97.6'
-
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
 
 group :development, :test do
   gem 'byebug'

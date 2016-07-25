@@ -22,8 +22,7 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		@post = Post.update post_params
-		if @post.update
+		if @post.update post_params
 			redirect_to post_path, notice: "Post succesfully updated"
 		else
 			render 'new', notice: "Ooops, something went wrong!"
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
 	private
 
 	def post_params
-		params.require(:post).permit(:title, :content)
+		params.require(:post).permit(:title, :content, :postimg, :remove_postimg)
 	end
 
 	def find_post

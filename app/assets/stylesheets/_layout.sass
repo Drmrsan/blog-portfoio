@@ -26,29 +26,32 @@ a
 
 header
 	position: relative
-	//background: url(header.jpg) no-repeat top center
+	background: url(header-transparent.jpg) no-repeat top center
 	background-size: cover
 
 	.headline
-		padding: 20px
+		padding: 100px
 		i
 			color: $coral
 			background: white
 			padding: 13px 10px
 			font-size: 3em
+			padding: 20px 18px
+			border-radius: 50%
+			border: 2px solid
 		h1
 			font-weight: 900
 			margin: 10px 0
 		h5
 			font-size: 1.2rem
-			font-weight: 300
+			font-weight: 500
 			text-transform: uppercase
 
 // ------- NAVIGATION SECTION ------- //
 
 nav
-	border-top: 4px double #dadada
-	border-bottom: 4px double #dadada
+	border-top: 4px double #c1c1c1
+	border-bottom: 4px double #c1c1c1
 	background: white
 	margin-bottom: 50px
 	box-shadow: none
@@ -60,7 +63,7 @@ nav
 				background: none
 			a
 				transition: all 0.3s ease-in-out
-				color: #777
+				color: #5f5f5f
 				text-transform: uppercase
 				font-size: .7em
 				&:hover
@@ -123,6 +126,38 @@ ul.popular
 			background: $coral
 			font-size: .8em
 			font-weight: 700
+
+.card
+	transition: all .3s ease-in-out
+	&:hover
+		.card-image .card-date, .card-image .card-comment
+			opacity: 1
+			transform: translateX(0px)
+	.card-image
+		overflow: hidden 
+		.card-date, .card-comment
+			position: absolute
+			right: 20px
+			width: 60px
+			text-align: center
+			background: white
+			padding: 4px
+			transition: all .3s ease-in-out
+			transform: translateX(100px)
+			p
+				margin: 0
+				padding: 0
+				font-size:  .8em
+				font-weight: 500
+		.card-date
+			top: 20px
+		.card-comment
+			top: 100px
+		
+footer.page-footer
+	background: #202020
+
+
 
 // ------- MEDIA QUERIES  ------- //
 

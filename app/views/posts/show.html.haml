@@ -1,7 +1,12 @@
 .container
+	
+	= image_tag @post.postimg.url if @post.postimg
+
 	%h1
 		= @post.title
 	%p
 		= @post.content
 
 	= link_to "Back", posts_path, class: "btn"
+	= link_to "Edit", edit_post_path(@post), class: "btn"
+	= link_to "Delete", post_path(@post), method: :delete, data:{ confirlm: "Are you sure?" }, class: "btn"

@@ -1,5 +1,11 @@
-= simple_form_for @post do |f|
+= simple_form_for @post, html: { multipart: true } do |f|
 	=f.input :title
 	=f.label :content
 	=f.text_field :content
+	=f.file_field :postimg, accept: 'image/jpeg,image/gif,image/png'
+	- if f.object.postimg?
+		=image_tag(@post.postimg.thumb.url)
+		=f.check_box :remove_postimg, id: "post_remove_postimg"
+		=f.label :remove_postimg, "Remove Post Image"
 	=f.button :submit
+
